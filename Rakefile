@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Overflowing::Application.load_tasks
+DbcOverflow::Application.load_tasks

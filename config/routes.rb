@@ -1,4 +1,4 @@
-Overflowing::Application.routes.draw do
+DbcOverflow::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

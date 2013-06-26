@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Overflowing::Application.config.secret_token = 'c0b4654d4472410a98e13c5c8af7f2dc92c420d87b2b791f5103c9c6d59206c70a48936a5b361d641aa8bb44a7a21e3e485f5233fe40a75c1fef4847d6cb2f87'
+DbcOverflow::Application.config.secret_token = '8d9c5c7f5dd3562abf1a322e73752c75eb897dc02005124c4d361bb8bda8094c1ef70236a3dd88cc4cf9757c6776b18183a190050ced8478a7790ae1811e1ba0'
