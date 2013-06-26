@@ -7,11 +7,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      #redirect to profile page
+      redirect_to user_path(@user)
     else
       #kick back to signup page
       render :new
     end
+  end
+
+  def show
+
   end
 
 end

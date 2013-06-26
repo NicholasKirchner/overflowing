@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = user.try(:authenticate, params[:session][:password])
     if user
       session[:user_id] = user.id
-      #redirect to profile page
+      redirect_to user_path(user)
     else
       #kick back to signin page
       render :new

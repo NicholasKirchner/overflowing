@@ -15,6 +15,7 @@ DbcOverflow::Application.routes.draw do
 
   match "/signup", to: "users#new"
 
+  match "/logout", to: "sessions#destroy"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
