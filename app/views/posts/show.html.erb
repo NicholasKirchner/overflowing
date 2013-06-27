@@ -1,10 +1,17 @@
-<h1><%= @post.title %></h1>
-<img src="<%=  @post.image_url %>"/>
+<div class="container">
+  <h1><%= @post.title %></h1>
+  
+  <div class="post_full">  
+    <img src="<%=  @post.image_url %>"/>
+  </div>
 
-<%= form_for [@post, @comment]  do |f| %>
-  <%= f.label :comment  %>
-  <%= f.text_field :content %>
-  <%= f.submit "Submit" %>
-<% end %>
+  <div class = "comment_form">
+    <%= form_for [@post, @comment]  do |f| %>
+      <%= f.label :comment  %>
+      <%= f.text_field :content %>
+      <%= f.submit "Submit" %>
+    <% end %>
+  </div>
 
-<%= render @comments %>
+  <%= render @comments %>
+</div>

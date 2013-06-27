@@ -1,12 +1,14 @@
 <nav>
-  <div class="brand">
-    <%= link_to "Our app", root_path %>
-  </div>
-  <div class="menu">
-    <%= link_to "Sign up", signup_path if current_user.nil? %>
-    <%= link_to "Sign in", new_session_path if current_user.nil? %>
+  <span class="brand">
+    <%= link_to "GIFOVERFLOW", root_path %>
+  </span>
+  <span class="menu">
+    <%= link_to "Sign Up", signup_path if current_user.nil? %>
+    <%= link_to "Sign In", new_session_path if current_user.nil? %>
     <%= link_to "Profile", user_path(current_user) if current_user %>
     <%= link_to "Log Out", logout_path if current_user %>
 
-  </div>
+  </span>
 </nav>
+
+

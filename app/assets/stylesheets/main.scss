@@ -1,0 +1,49 @@
+$teal: #1abc9c;
+$pom: #c0392b;
+$regfont: 'Quantico', sans-serif;
+$bigfont: 'Advent Pro', sans-serif;
+
+#main_container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-top: 80px;
+  text-align: center;
+  font-family: $regfont;
+  font-size: 300%;
+}
+
+.post_list {
+  width: 90%;
+  margin: 0 auto;
+
+  .post {
+    float: left;
+    padding-top: 25px;
+    margin: 0 3px 3px 0;
+    border: 1px solid #1abc9c;
+    border-radius: 15px;
+    width: 300px; 
+    color: white;
+    background-color: $teal;
+
+    text-align: center;
+    img {
+      display: block;
+      height: 250px;
+      width: 250px;
+      margin: 0 auto;
+    }
+    a {
+      font-family: $bigfont;
+      font-size: 150%;
+      color: white;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $pom;
+    }
+  }
+}

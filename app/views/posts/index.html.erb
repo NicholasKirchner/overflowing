@@ -1,8 +1,15 @@
-<h1>Posts</h1>
+<div id="main_container">
 
-<% @posts.each do |post| %>
-  <p><%= link_to post.title, post_path(post) %></p>
-<% end %>
+  <h1>ALL SEXY GIFS</h1>
 
+  <div class="post_list">
+    <% @posts.each do |post| %>
+      <div class="post">
+        <%= image_tag post.image_url %>
+        <p><%= link_to post.title, post_path(post) %></p>
+      </div>
+    <% end %>
+  </div>
 
+</div>
 
