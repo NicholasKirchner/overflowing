@@ -1,0 +1,12 @@
+<nav>
+  <div class="brand">
+    Our app
+  </div>
+  <div class="menu">
+    <%= link_to "Sign up", signup_path if current_user.nil? %>
+    <%= link_to "Sign in", new_session_path if current_user.nil? %>
+    <%= link_to "Profile", user_path(current_user) if current_user %>
+    <%= link_to "Log Out", logout_path if current_user %>
+
+  </div>
+</nav>

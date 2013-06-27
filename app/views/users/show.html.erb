@@ -1,1 +1,14 @@
-<h2> This is where we are going to show users posts/comments </h2>
+<h2> Welcome to your shitty profile </h2>
+
+<%= link_to "New", new_post_path %> </br>
+
+<h3> Your Posts: </h3>
+<% @posts.each do |post| %>
+  <h5><%= post.title %></h5>
+  <img src='<%=  post.image_url %>'/>" %>
+<% end %>
+
+<h3> Your Comments </h3>
+<%= @comments.each do |comment| %>
+  <%= comment.content %>
+<% end %>
