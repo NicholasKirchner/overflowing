@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'better_errors'
+gem 'binding_of_caller'
 
 
 # Gems used only for assets and not required
@@ -30,6 +31,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.0"
   gem "database_cleaner"
+  gem 'sextant'
 end
 # To use ActiveModel has_secure_password
 

@@ -6,22 +6,28 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(params[:comment])
-    # debugger
-    # User.find().comments << @comment     #XXXXXXXXXXXXXX INSERT SESSION KEY
+    User.find(current_user.id).comments << @comment     #XXXXXXXXXXXXXX INSERT SESSION KEY
     Post.find(params[:post_id]).comments << @comment
     redirect_to :back
   end
 
   def edit
-    @comment = Comment.find(params[:id])
-    @post = Post.find(params[:post_id])
+    if current_user && current_user.id == Comment.find(params[:id]).user.id
+      @comment = Comment.find(params[:id])
+      @post = Post.find(params[:post_id])
+    else
+      render text: "gtfo"
+    end
   end
 
   def update
-    Comment.find(params[:id]).update_attributes(params[:comment])
+    comment = Comment.find(params[:id])
+    comment.update_attributes(params[:comment])
+    redirect_to post_path(comment.post)
   end
 
   def destroy
     Comment.destroy(params[:id])
+    redirect_to root_path
   end
 end
