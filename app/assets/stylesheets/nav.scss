@@ -16,11 +16,14 @@ nav {
   span {
     line-height: 50px;
     a {
-      font: 'Advent Pro', sans-serif;;
+      font-family: $bigfont;
       font-size: 150%;
       text-decoration: none;
       margin: 0 8px 0 8px;
       color: white;
+    }
+    a:hover {
+      color: $pom;
     }
   }
 
