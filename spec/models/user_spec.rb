@@ -6,7 +6,7 @@ describe User do
     @user = User.new(name:"bob", email: "bob@bob.com", password: "fred")
   end
   
-  context "#create" do
+  context "create" do
     it "should work when given name, email and password" do
       expect(@user).to be_valid
     end

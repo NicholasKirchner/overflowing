@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    puts params[:id]
     if current_user && current_user.id == Comment.find(params[:id]).user.id
       @comment = Comment.find(params[:id])
       @post = Post.find(params[:post_id])
@@ -29,5 +30,11 @@ class CommentsController < ApplicationController
   def destroy
     Comment.destroy(params[:id])
     redirect_to root_path
+  end
+
+  def show
+    puts params.inspect
+    comment = Comment.find(params[:id])
+    render text: comment
   end
 end

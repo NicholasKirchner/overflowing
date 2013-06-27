@@ -1,6 +1,6 @@
 <nav>
   <div class="brand">
-    Our app
+    <%= link_to "Our app", root_path %>
   </div>
   <div class="menu">
     <%= link_to "Sign up", signup_path if current_user.nil? %>

@@ -5,10 +5,13 @@
 <h3> Your Posts: </h3>
 <% @posts.each do |post| %>
   <h5><%= post.title %></h5>
-  <img src='<%=  post.image_url %>'/>" %>
+  <img src='<%=  post.image_url %>'/>
+  <%= link_to "Edit", edit_post_path(post) %>
 <% end %>
 
 <h3> Your Comments </h3>
-<%= @comments.each do |comment| %>
+<% @comments.each do |comment| %>
   <%= comment.content %>
+  <%= comment.id %>
+  <%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>
 <% end %>
