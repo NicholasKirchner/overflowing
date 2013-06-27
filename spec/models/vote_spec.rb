@@ -48,7 +48,11 @@ describe Vote do
   end
 
   it "should have a value" do
-    post_vote.
+    expect(post_vote.value).to_not be_nil 
   end
+
+  
+
+
 
 end
