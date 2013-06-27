@@ -2,3 +2,5 @@
   <%= f.text_field :content %>
   <%= f.submit "Submit changes" %>
 <% end %>
+
+<%= link_to "Delete", post_comment_path(@comment), :method => :delete %>

@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def create
     post = Post.create(params[:post])
-    session[:current_user].posts << post #XXXXXXXXXXXXXX what is the session symbol
+    User.find(current_user.id).posts << post #XXXXXXXXXXXXXX what is the session symbol
     redirect_to root_path
   end
 
@@ -21,7 +21,12 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    if current_user && current_user.id == Post.find(params[:id]).user.id
+      @post = Post.find(params[:id]) 
+    else
+      render text: "gtfo"
+    end
+    
   end
 
   def update
