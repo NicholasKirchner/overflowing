@@ -1,15 +1,21 @@
-<div id="main_container">
+<h1>ALL SEXY IMGS</h1>
 
-  <h1>ALL SEXY IMGS</h1>
+<div class="post_list">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <%= image_tag post.image_url %>
+      <p><%= link_to post.title, post_path(post) %></p>
+     
+      <%= link_to votes_path(votable_id: post.id, votable_type: post.class, vote_value: 1), :remote=>true, :method=> 'post', :class => "vote" do %>
+         <img class="arrow" src="http://cdn1.iconfinder.com/data/icons/large-black-icons/512/Up_arrow_vote_like_upload.png">
+      <% end %>
+       <div class="votecount"><%= post.total_votes %></div>
+      <%= link_to votes_path(votable_id: post.id, votable_type: post.class, vote_value: -1), :remote=>true, :method=> 'post', :class => "vote" do %>
+         <img class="arrow" src="http://www.3h.ca/blog/wp-content/uploads/2013/01/downvote-copy.png">
+      <% end %>
 
-  <div class="post_list">
-    <% @posts.each do |post| %>
-      <div class="post">
-        <%= image_tag post.image_url %>
-        <p><%= link_to post.title, post_path(post) %></p>
-      </div>
-    <% end %>
-  </div>
-
+    </div>
+  <% end %>
 </div>
+
 

@@ -1,12 +1,9 @@
-<div class="container">
-
-  <div class="post_form">
-    <%= form_for @post do |f| %>
-      <%= f.text_field :title %>
-      <%= f.text_field :image_url %>
-      <%= f.submit "Submit Changes" %>
-    <% end %>
-  </div>
-  
-  <%= link_to "Delete", post_path(@post), :method => :delete %>
+<div class="post_form">
+  <%= form_for @post do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_field :image_url %>
+    <%= f.submit "Submit Changes" %>
+  <% end %>
 </div>
+
+<%= link_to "Delete", post_path(@post), :method => :delete %>
