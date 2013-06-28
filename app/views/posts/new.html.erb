@@ -1,7 +1,11 @@
-<%= form_for @post do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
-  <%= f.submit "Submit" %>
-<% end %>
+<h2>Make a New Post</h2>
+
+<div class="post_form">
+  <%= form_for @post do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url %>
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>

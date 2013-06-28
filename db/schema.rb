@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130626185846) do
+ActiveRecord::Schema.define(:version => 20130627175021) do
 
   create_table "comments", :force => true do |t|
     t.text    "content"
@@ -30,5 +30,14 @@ ActiveRecord::Schema.define(:version => 20130626185846) do
     t.string "password_digest"
     t.string "name"
   end
+
+  create_table "votes", :force => true do |t|
+    t.integer "votable_id"
+    t.string  "votable_type"
+    t.integer "user_id"
+    t.integer "value"
+  end
+
+  add_index "votes", ["votable_id", "votable_type", "user_id"], :name => "index_votes_on_votable_id_and_votable_type_and_user_id", :unique => true
 
 end

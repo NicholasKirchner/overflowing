@@ -3,15 +3,19 @@
 <%= link_to "New", new_post_path %> </br>
 
 <h3> Your Posts: </h3>
-<% @posts.each do |post| %>
-  <h5><%= post.title %></h5>
-  <img src='<%=  post.image_url %>'/>
-  <%= link_to "Edit", edit_post_path(post) %>
-<% end %>
+<div class="post_list">
+  <% @posts.each do |post| %>
+    <h5><%= post.title %></h5>
+    <img src='<%=  post.image_url %>'/>
+    <%= link_to "Edit", edit_post_path(post) %>
+  <% end %>
+</div>
 
 <h3> Your Comments </h3>
-<% @comments.each do |comment| %>
-  <%= comment.content %>
-  <%= comment.id %>
-  <%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>
-<% end %>
+<div class ="comment_list">
+  <% @comments.each do |comment| %>
+    <%= comment.content %>
+    <%= comment.id %>
+    <%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>
+  <% end %>
+</div>

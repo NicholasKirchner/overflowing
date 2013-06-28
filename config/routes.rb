@@ -13,6 +13,8 @@ DbcOverflow::Application.routes.draw do
 
   resources :users
 
+  resources :votes, :only => [:create, :update]
+
   match "/signup", to: "users#new"
 
   match "/logout", to: "sessions#destroy"

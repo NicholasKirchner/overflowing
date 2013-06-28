@@ -1,11 +1,13 @@
 <h2> Login Page </h2>
-<%= form_for :session, :url => sessions_path do |f| %>
-  <%= f.label :email %>:
-  <%= f.text_field :email %> <br/>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %> <br/>
+<div class="login_signup_form">
+  <%= form_for :session, :url => sessions_path do |f| %>
+    <%= f.label :email %>:
+    <%= f.text_field :email %> <br/>
 
-  <%= f.submit %>
+    <%= f.label :password %>
+    <%= f.password_field :password %> <br/>
 
-<% end %>
+    <%= f.submit %>
+  <% end %>
+</div>
