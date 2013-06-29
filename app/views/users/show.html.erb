@@ -1,4 +1,4 @@
-<h2> Welcome to your shitty profile </h2>
+<h2> Welcome to your profile </h2>
 
 <%= link_to "New", new_post_path %> </br>
 
@@ -14,8 +14,7 @@
 <h3> Your Comments </h3>
 <div class ="comment_list">
   <% @comments.each do |comment| %>
-    <%= comment.content %>
-    <%= comment.id %>
-    <%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>
+    <p><strong><%= comment.content %></strong></br> 
+    on: <%= link_to comment.post.title, post_path(comment.post) %></p>
   <% end %>
 </div>

@@ -5,10 +5,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create(params[:comment])
-    User.find(current_user.id).comments << @comment     #XXXXXXXXXXXXXX INSERT SESSION KEY
-    Post.find(params[:post_id]).comments << @comment
-    redirect_to :back
+      @comment = Comment.create(params[:comment])
+      User.find(current_user.id).comments << @comment     #XXXXXXXXXXXXXX INSERT SESSION KEY
+      Post.find(params[:post_id]).comments << @comment
+      redirect_to :back
   end
 
   def edit

@@ -1,5 +1,8 @@
 <ul>
   <li>
-    <%= comment.content %>
+    "<%= comment.content %>" - <%= comment.user.name %><br>
+    <% if current_user != nil && comment.user.id == current_user.id%>
+      <%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>
+    <% end %>
   </li>
 </ul>

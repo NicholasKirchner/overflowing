@@ -19,6 +19,7 @@ h1 {
 .post_list {
   width: 90%;
   margin: 0 auto;
+  text-align: center;
 
   .post {
     float: left;
@@ -52,4 +53,9 @@ h1 {
       width: 50px;
     }
   }
+}
+
+.pagination {
+  clear: both;
+  text-align: center;
 }

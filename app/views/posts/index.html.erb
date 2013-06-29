@@ -1,4 +1,4 @@
-<h1>ALL SEXY IMGS</h1>
+<h1>BROPOSITORY</h1>
 
 <div class="post_list">
   <% @posts.each do |post| %>
@@ -9,13 +9,16 @@
       <%= link_to votes_path(votable_id: post.id, votable_type: post.class, vote_value: 1), :remote=>true, :method=> 'post', :class => "vote" do %>
          <img class="arrow" src="http://cdn1.iconfinder.com/data/icons/large-black-icons/512/Up_arrow_vote_like_upload.png">
       <% end %>
-       <div class="votecount"><%= post.total_votes %></div>
+       <div id="votecount-<%=post.id%>"><%= post.total_votes %></div>
       <%= link_to votes_path(votable_id: post.id, votable_type: post.class, vote_value: -1), :remote=>true, :method=> 'post', :class => "vote" do %>
          <img class="arrow" src="http://www.3h.ca/blog/wp-content/uploads/2013/01/downvote-copy.png">
       <% end %>
 
     </div>
   <% end %>
+
 </div>
+
+  <%= will_paginate @posts %>
 
 
