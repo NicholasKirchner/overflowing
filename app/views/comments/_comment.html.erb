@@ -1,7 +1,15 @@
 <ul>
   <li>
-    "<%= comment.content %>" - <%= comment.user.name %><br>
+  	<span style="font-weight: 600;"id="votecount-<%=comment.id%>"><%= comment.total_votes %></span>
+    "<%= comment.content %>" - <%= comment.user.name %>
     <% if current_user != nil && comment.user.id == current_user.id%>
+    <%= link_to votes_path(votable_id: comment.id, votable_type: comment.class, vote_value: 1), :remote=>true, :method=> 'post', :class => "vote" do %>
+         <img class="commentarrow" src="http://cdn1.iconfinder.com/data/icons/large-black-icons/512/Up_arrow_vote_like_upload.png">
+      <% end %>
+       
+      <%= link_to votes_path(votable_id: comment.id, votable_type: comment.class, vote_value: -1), :remote=>true, :method=> 'post', :class => "vote" do %>
+         <img class="commentarrow" src="http://www.3h.ca/blog/wp-content/uploads/2013/01/downvote-copy.png">
+      <% end %>
       <%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>
     <% end %>
   </li>
