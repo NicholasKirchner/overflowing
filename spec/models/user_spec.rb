@@ -1,36 +1,16 @@
 require 'spec_helper'
 
 describe User do
+  it { should validate_presence_of :name }
+  it { should validate_presence_of :password }
+  it { should validate_uniqueness_of :email }
 
-  before do
-    @user = User.new(name:"bob", email: "bob@bob.com", password: "fred")
-  end
-  
-  context "create" do
-    it "should work when given name, email and password" do
-      expect(@user).to be_valid
-    end
-
-    it "should not work when name is not given" do
-      @user.name = ""
-      expect(@user).to_not be_valid
-    end
-
-    it "should not work when email is not given" do
-      @user.email = ""
-      expect(@user).to_not be_valid
-    end
-
-    it "should not work when password is not given" do
-      @user.password = ""
-      expect(@user).to_not be_valid
-    end
-
-    it "should not allow duplicate emails" do
-      user_dup_email = @user.dup
-      @user.save
-      expect(user_dup_email).to_not be_valid  
-    end
-
-  end
+  let(:user) { FactoryGirl.create(:user) }
+  subject { user }
+    it { should respond_to :name }
+    it { should respond_to :email }
+    it { should respond_to :posts }
+    it { should respond_to :comments }
+    it { should respond_to :votes }
+    it { should be_valid }
 end
