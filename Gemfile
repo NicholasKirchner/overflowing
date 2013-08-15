@@ -32,7 +32,10 @@ group :test, :development do
   gem 'factory_girl_rails', "~> 4.0"
   gem "database_cleaner"
   gem 'sextant'
-  gem 'shoulda', :require => false
+end
+
+group :test do
+  gem 'shoulda'
 end
 # To use ActiveModel has_secure_password
 
