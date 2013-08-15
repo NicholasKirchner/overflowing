@@ -31,5 +31,6 @@ FactoryGirl.define do
     name { Faker::Name.name }
     password 'password'
   end
+
 end  
 
