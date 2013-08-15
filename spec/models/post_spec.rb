@@ -5,6 +5,8 @@ describe Post do
   it { should validate_presence_of(:image_url) }
 
   let(:post) { FactoryGirl.create(:post) }
+  let(:vote) { FactoryGirl.create(:vote) }
+  let(:down_vote) { FactoryGirl.create(:down_vote) }
 
   subject { post }
 
@@ -22,8 +24,8 @@ describe Post do
     end
 
     it "should add up total votes for a post" do
-      post.votes << FactoryGirl.create(:vote)
-      post.votes << FactoryGirl.create(:down_vote)
+      post.votes << vote
+      post.votes << down_vote
       post.total_votes.should == 0
     end
   end
