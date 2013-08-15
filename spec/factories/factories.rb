@@ -2,10 +2,16 @@ FactoryGirl.define do
 
   factory :vote do
     votable_id {1}
-    votable_type {"Class"}
+    votable_type {"Post"}
     user
     value {1}
+
+    factory :down_vote do
+      votable_id {2}
+      value {-1}
+    end
   end
+
 
   factory :comment do
     content { Faker::Lorem.sentences(3) }

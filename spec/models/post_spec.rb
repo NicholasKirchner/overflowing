@@ -16,25 +16,15 @@ describe Post do
   it { should respond_to(:total_votes)}
   it { should be_valid }
   
-  describe '#totalvotes' do
+  describe '#total_votes' do
     it "should return 0 if post has no votes" do
       post.total_votes.should == 0
     end
+
+    it "should add up total votes for a post" do
+      post.votes << FactoryGirl.create(:vote)
+      post.votes << FactoryGirl.create(:down_vote)
+      post.total_votes.should == 0
+    end
   end
-
-  # let(:post) {user.posts.create(title: "sweet gif", 
-  #                         image_url: "lolcats.com")}
-  #   let(:post_vote) {user.votes.create(votable_id: comment.id, 
-  #                         votable_type: "Comment", 
-  #                         value: 1)}
-
-  # let(:post_vote_dup) {user.votes.create(votable_id: comment.id, 
-  #                         votable_type: "Comment", 
-  #                         value: 1)}
-
-#   it "should return its total number of votes" do
-#     4.times do post
-#   end
-# end
-
 end
